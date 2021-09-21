@@ -33,7 +33,8 @@ class MyGUI:
         self.rb3 = tkinter.Radiobutton(self.top_frame,
                                        text='Вариант 3',
                                        variable=self.radio_var,
-                                       value=3)
+                                       value=3,
+                                       command=self.my_method)
         # Упаковаем элементы Radiobutton.
         self.rb1.pack()
         self.rb2.pack()
@@ -62,6 +63,10 @@ class MyGUI:
     # для кнопки ОК.
     def show_choice(self):
         tkinter.messagebox.showinfo('Выбор', 'Выбран вариант ' +
+                                    str(self.radio_var.get()))
+
+    def my_method(self):
+        tkinter.messagebox.showinfo('Ммммм', 'Прекрассный выбор!!! ' +
                                     str(self.radio_var.get()))
 
 
